@@ -1,0 +1,16 @@
+.vscode
+.vscode/*
+.vscode/**/*
+.idea
+node_modules
+node_modules/*
+node_modules/**/*
+dist
+dist/*
+dist/**/*
+coverage
+coverage/*
+coverage/**/*
+.DS_Store
+yarn-error.log
+newrelic_agent.log

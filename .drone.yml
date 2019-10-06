@@ -1,0 +1,22 @@
+kind: pipeline
+name: default
+steps:
+  - name: build_and_publish
+    image: plugins/docker
+    settings:
+      repo: guallarauco.azurecr.io/kubectl
+      registry: guallarauco.azurecr.io
+      username: 
+        from_secret: gll_acr_username
+      password:
+        from_secret: gll_acr_password
+      force_tag: false
+      debug: true
+      tags:
+      - latest
+      - build-id-${DRONE_BUILD_NUMBER}
+      - build-commit-${DRONE_COMMIT_SHA}
+      build_args:
+      - BUILDIMAGETAG=b-${DRONE_BUILD_NUMBER}
+      - BUILDNUMBER=${DRONE_BUILD_NUMBER}
+      - BUILDCOMMIT=${DRONE_COMMIT_SHA}
