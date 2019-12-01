@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:latest
 LABEL maintainer="castocolina"
 
 RUN apk --no-cache add curl ca-certificates bash
